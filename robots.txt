@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://allradmuelleimer.github.io/stay-awake-website/sitemap.xml
