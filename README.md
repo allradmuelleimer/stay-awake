@@ -5,7 +5,7 @@ kleine Startseite. Deutsch und englisch.
 
 Reines HTML und ein Stylesheet. **Kein Build-Schritt, kein Framework, keine Abhängigkeiten.**
 
-**Künftig live unter:** <https://allradmuelleimer.github.io/stay-awake-website/>
+**Künftig live unter:** <https://allradmuelleimer.github.io/stay-awake/>
 (noch nicht veröffentlicht — Befehle unten)
 
 ```
@@ -30,17 +30,17 @@ im Wurzelverzeichnis liegt — ein `git push` genügt, eine Minute später ist d
 Einmalige Einrichtung (vom Auftraggeber auszuführen):
 
 ```bash
-gh repo create allradmuelleimer/stay-awake-website --public \
+gh repo create allradmuelleimer/stay-awake --public \
   --description "Stay Awake – Datenschutzerklärung und Impressum" \
   --source . --remote origin --push
-gh api -X POST repos/allradmuelleimer/stay-awake-website/pages \
+gh api -X POST repos/allradmuelleimer/stay-awake/pages \
   -f 'source[branch]=main' -f 'source[path]=/'
 ```
 
 Status jederzeit nachsehen:
 
 ```bash
-gh api repos/allradmuelleimer/stay-awake-website/pages --jq '.status, .html_url'
+gh api repos/allradmuelleimer/stay-awake/pages --jq '.status, .html_url'
 ```
 
 ---
@@ -48,12 +48,12 @@ gh api repos/allradmuelleimer/stay-awake-website/pages --jq '.status, .html_url'
 ## Wichtig: die Pfade hängen am Repository-Namen
 
 Pages liefert Projektseiten unter `/<repo-name>/` aus, nicht unter `/`. Deshalb stehen alle
-internen Verweise als `/stay-awake-website/…` im Quelltext. **Wird das Repository umbenannt,
+internen Verweise als `/stay-awake/…` im Quelltext. **Wird das Repository umbenannt,
 bricht jede CSS- und Navigationsverknüpfung**, bis alles mitgezogen ist:
 
 ```bash
-grep -rl "stay-awake-website" . --exclude-dir=.git \
-  | xargs sed -i 's|stay-awake-website|NEUER-NAME|g'
+grep -rl "stay-awake" . --exclude-dir=.git \
+  | xargs sed -i 's|stay-awake|NEUER-NAME|g'
 ```
 
 Die Adresse der Datenschutzerklärung wird bei Google Play im Feld „Datenschutzerklärung"
