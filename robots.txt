@@ -1,4 +1,4 @@
+# Bewusst ohne Sitemap: Alle Seiten tragen noindex (Name und Anschrift des Anbieters sollen nicht
+# in Suchmaschinen erscheinen). Crawlen bleibt erlaubt - nur so sehen Suchmaschinen das noindex.
 User-agent: *
 Allow: /
-
-Sitemap: https://allradmuelleimer.github.io/stay-awake-website/sitemap.xml

@@ -17,7 +17,7 @@ imprint/                Imprint EN
 404.html
 css/site.css            Das einzige Stylesheet, Palette wie in der App (ui/theme/Color.kt)
 .nojekyll               Verhindert, dass GitHub Pages die Dateien durch Jekyll schickt
-robots.txt  sitemap.xml
+robots.txt              Crawlen erlaubt, keine Sitemap - alle Seiten tragen noindex
 ```
 
 ---
