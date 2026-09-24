@@ -33,10 +33,11 @@
       <h2 style="margin-top:.25rem">In short</h2>
       <p><strong>No account, no sign-in, no server of our own.</strong> The app stores sessions,
         schedules and settings on your device only. Wake checks work entirely without internet.</p>
-      <p>Three Google services are built in: <strong>advertising</strong> (Google AdMob, free
-        version only), <strong>purchases</strong> (Google Play) and <strong>crash
-        reports</strong> (Firebase Crashlytics). What each of them receives is set out below.
-        Beyond that there is no analytics and no tracking.</p>
+      <p>Four Google services are built in: <strong>advertising</strong> (Google AdMob, free
+        version only), <strong>purchases</strong> (Google Play), <strong>crash
+        reports</strong> (Firebase Crashlytics) and <strong>usage counts</strong> (Google Analytics
+        for Firebase, only with your consent). What each of them receives is set out below. No
+        profiles are built.</p>
     </div>
 
     <h2>What the app stores on your device</h2>
@@ -125,10 +126,27 @@
       this data as our processor. More:
       <a href="https://firebase.google.com/support/privacy" rel="nofollow noopener">Privacy and security in Firebase</a>.</p>
 
-    <h2>No analytics, no tracking</h2>
-    <p>Stay Awake includes <strong>no</strong> analytics services, does not measure usage and
-      builds no profiles. Apart from the three Google services named above, nobody receives data
-      from the app.</p>
+    <h2>Usage counts (Google Analytics for Firebase)</h2>
+    <p>Since 24 September 2026 the app counts <strong>how</strong> it is used - only in the
+      versions published through Google Play and <strong>only with your consent</strong>. If you
+      decline consent, nothing is measured.</p>
+    <p>What is sent are <strong>counts</strong>: that a session started (with mode, check interval
+      and the confirmation actions you chose), that it ended (reason and duration in minutes), that
+      a check was confirmed (with what, and at which stage), that an alarm was reached, that the
+      purchase screen was opened or a purchase completed, and the overall result of the reliability
+      check.</p>
+    <p><strong>Not</strong> sent: times of day, schedules, weekdays or any location. Firebase
+      itself carries an app instance ID, device model, Android version and a coarse country from
+      the IP address; the app sets no user ID.</p>
+    <p>The purpose is to see whether the app is used, which confirmation action actually helps at
+      night, and how often a check runs all the way to the alarm. Google processes this data as a
+      processor. More:
+      <a href="https://firebase.google.com/support/privacy" rel="nofollow noopener">Privacy and security in Firebase</a>.</p>
+
+    <h2>No cross-app tracking</h2>
+    <p>Stay Awake builds <strong>no</strong> profiles, sells nothing on and merges nothing with
+      other sources. Apart from the four Google services named above, nobody receives data from the
+      app.</p>
 
     <h2>Permissions and what they are for</h2>
     <div class="table-scroll">

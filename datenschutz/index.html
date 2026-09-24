@@ -34,10 +34,11 @@
       <p><strong>Kein Konto, keine Anmeldung, kein eigener Server.</strong> Sitzungen, Zeitpläne
         und Einstellungen speichert die App nur auf deinem Gerät. Die Wach-Checks funktionieren
         ganz ohne Internet.</p>
-      <p>Drei Dienste von Google sind eingebunden: <strong>Werbung</strong> (Google AdMob, nur in
-        der kostenlosen Version), <strong>Käufe</strong> (Google Play) und
-        <strong>Absturzberichte</strong> (Firebase Crashlytics). Was dabei jeweils übertragen wird,
-        steht unten. Darüber hinaus gibt es keine Analyse und kein Tracking.</p>
+      <p>Vier Dienste von Google sind eingebunden: <strong>Werbung</strong> (Google AdMob, nur in
+        der kostenlosen Version), <strong>Käufe</strong> (Google Play),
+        <strong>Absturzberichte</strong> (Firebase Crashlytics) und <strong>Nutzungszahlen</strong>
+        (Google Analytics for Firebase, nur mit deiner Einwilligung). Was dabei jeweils übertragen
+        wird, steht unten. Profile werden nicht gebildet.</p>
     </div>
 
     <h2>Was die App auf deinem Gerät speichert</h2>
@@ -133,10 +134,27 @@
       Google verarbeitet diese Daten als Auftragsverarbeiter. Mehr:
       <a href="https://firebase.google.com/support/privacy" rel="nofollow noopener">Datenschutz und Sicherheit in Firebase</a>.</p>
 
-    <h2>Keine Analyse, kein Tracking</h2>
-    <p>Stay Awake bindet <strong>keine</strong> Analysedienste ein, zählt keine Nutzung aus und
-      erstellt keine Profile. Außer den drei genannten Google-Diensten erhält niemand Daten aus der
-      App.</p>
+    <h2>Nutzungszahlen (Google Analytics for Firebase)</h2>
+    <p>Seit dem 24. September 2026 zählt die App, <strong>wie</strong> sie benutzt wird - nur in
+      den über Google Play veröffentlichten Fassungen und <strong>nur mit deiner
+      Einwilligung</strong>. Lehnst du die Einwilligung ab, wird nicht gemessen.</p>
+    <p>Übertragen werden <strong>Zählwerte</strong>: dass eine Sitzung gestartet wurde (mit
+      Betriebsart, Check-Intervall und gewählten Bestätigungsarten), dass sie endete (Grund und
+      Dauer in Minuten), dass ein Check bestätigt wurde (womit und in welcher Stufe), dass ein
+      Alarm erreicht wurde, dass der Kaufschirm geöffnet oder ein Kauf abgeschlossen wurde, und
+      das Gesamtergebnis der Verlässlichkeitsprüfung.</p>
+    <p><strong>Nicht</strong> übertragen werden Uhrzeiten, Zeitpläne, Wochentage oder ein
+      Standort. Firebase selbst führt eine App-Instanz-ID, Gerätemodell, Android-Version und ein
+      grobes Land aus der IP-Adresse mit; eine Nutzerkennung setzt die App nicht.</p>
+    <p>Zweck ist zu erkennen, ob die App benutzt wird, welche Bestätigungsart nachts wirklich
+      hilft und wie oft ein Check bis zum Alarm läuft. Google verarbeitet diese Daten als
+      Auftragsverarbeiter. Mehr:
+      <a href="https://firebase.google.com/support/privacy" rel="nofollow noopener">Datenschutz und Sicherheit in Firebase</a>.</p>
+
+    <h2>Kein Tracking über Apps hinweg</h2>
+    <p>Stay Awake erstellt <strong>keine</strong> Profile, verkauft nichts weiter und führt nichts
+      mit anderen Quellen zusammen. Außer den vier genannten Google-Diensten erhält niemand Daten
+      aus der App.</p>
 
     <h2>Berechtigungen und wofür sie gebraucht werden</h2>
     <div class="table-scroll">
