@@ -1,4 +1,7 @@
-# Bewusst ohne Sitemap: Alle Seiten tragen noindex (Name und Anschrift des Anbieters sollen nicht
-# in Suchmaschinen erscheinen). Crawlen bleibt erlaubt - nur so sehen Suchmaschinen das noindex.
+# Startseiten und Anleitungen sind indexierbar und stehen in der Sitemap.
+# Datenschutz, Impressum, Privacy und Imprint tragen weiter noindex (Name und Anschrift).
 User-agent: *
 Allow: /
+Disallow: /stay-awake/tools/
+
+Sitemap: https://allradmuelleimer.github.io/stay-awake/sitemap.xml

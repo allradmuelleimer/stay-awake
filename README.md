@@ -1,12 +1,24 @@
 # Stay Awake — Website
 
-Die öffentliche Datenschutzerklärung, die Google Play verlangt, dazu Impressum und eine
-kleine Startseite. Deutsch und englisch.
+Startseite (de + en), sieben Anleitungen je Sprache, dazu die Datenschutzerklärung, die
+Google Play verlangt, und das Impressum.
 
-Reines HTML und ein Stylesheet. **Kein Build-Schritt, kein Framework, keine Abhängigkeiten.**
+**Live:** <https://allradmuelleimer.github.io/stay-awake/> (englisch: `/en/`)
 
-**Künftig live unter:** <https://allradmuelleimer.github.io/stay-awake/>
-(noch nicht veröffentlicht — Befehle unten)
+Seit 21.11.2026 erzeugt ein kleines Python-Skript Startseiten, Anleitungen, Sitemap und robots.txt
+(kein Framework, keine Abhängigkeiten). Texte stehen in `tools/content_de.py` und
+`tools/content_en.py`, Aufbau in `tools/build.py`, Gestaltung in `css/site.css`:
+
+```
+python -I tools/build.py        # baut alle erzeugten Seiten neu
+python -I tools/check_site.py   # Links, Bilder, JSON-LD, hreflang, Titel-/Beschreibungslänge
+```
+
+Die erzeugten `index.html` nie direkt ändern. Startseiten und Anleitungen sind **indexierbar**
+und stehen in `sitemap.xml`; Datenschutz, Impressum, Privacy, Imprint und 404 bleiben
+handgeschrieben und `noindex` (Name und Anschrift). Bilder in `img/` sind echte App-Aufnahmen
+vom Emulator. Verboten in allen Texten: Autofahren/Straßenverkehr (außer dem Grenzen-Satz aus dem
+Play-Eintrag), Arbeitsschutz-Versprechen, „verhindert Einschlafen“, medizinische Ratschläge.
 
 ```
 index.html              Startseite DE (inkl. Hinweis "kein Sicherheitssystem")
@@ -17,7 +29,7 @@ imprint/                Imprint EN
 404.html
 css/site.css            Das einzige Stylesheet, Palette wie in der App (ui/theme/Color.kt)
 .nojekyll               Verhindert, dass GitHub Pages die Dateien durch Jekyll schickt
-robots.txt              Crawlen erlaubt, keine Sitemap - alle Seiten tragen noindex
+robots.txt / sitemap.xml  erzeugt von tools/build.py
 ```
 
 ---
