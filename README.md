@@ -1,9 +1,13 @@
 # Stay Awake — Website
 
-Startseite (de + en), sieben Anleitungen je Sprache, dazu die Datenschutzerklärung, die
+Startseite (en + de), sieben Anleitungen je Sprache, dazu die Datenschutzerklärung, die
 Google Play verlangt, und das Impressum.
 
-**Live:** <https://allradmuelleimer.github.io/stay-awake/> (englisch: `/en/`)
+**Live:** <https://allradmuelleimer.github.io/stay-awake/> – **Englisch ist die Hauptseite**
+(Wurzel `/`, Anleitungen `/guides/`), jede weitere Sprache liegt unter `/<code>/` (Deutsch:
+`/de/`, `/de/anleitungen/`). Entscheidung des Inhabers vom 21.11.2026. Die Rechtsseiten bleiben,
+wo sie sind (`/datenschutz/` ist bei Google Play eingetragen). Die am 21.11. kurz gültigen
+Adressen (`/en/…`, `/anleitungen/…`) leiten per Meta-Refresh weiter.
 
 Seit 21.11.2026 erzeugt ein kleines Python-Skript Startseiten, Anleitungen, Sitemap und robots.txt
 (kein Framework, keine Abhängigkeiten). Texte stehen in `tools/content_de.py` und

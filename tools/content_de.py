@@ -396,7 +396,7 @@ C = {
                 ["Kann die Android-Uhr einen Wecker alle 30 Minuten wiederholen?",
                  ["Die Uhr-Apps der meisten Android-Telefone wiederholen Wecker nur nach Wochentagen. Für alle 30 Minuten brauchst du mehrere Wecker, einen Timer oder eine eigene App."]],
                 ["Warum klingelt mein Intervall-Wecker bei dunklem Bildschirm nicht?",
-                 ["Oft sind Akku-Optimierung oder eine fehlende Berechtigung für exakte Alarme schuld. Siehe [Android-Wecker klingelt nicht](/anleitungen/android-wecker-klingelt-nicht/)."]],
+                 ["Oft sind Akku-Optimierung oder eine fehlende Berechtigung für exakte Alarme schuld. Siehe [Android-Wecker klingelt nicht](/de/anleitungen/android-wecker-klingelt-nicht/)."]],
                 ["Geht auch ein Intervall von 15 oder 45 Minuten?",
                  ["In Stay Awake ja: Der Regler reicht von einer Minute bis zu zwölf Stunden."]],
             ],

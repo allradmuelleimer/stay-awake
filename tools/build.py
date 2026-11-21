@@ -38,7 +38,7 @@ PLAY_ID = "com.nicedevelopments.stayawake"
 PLAY_HL = {"de": "de", "en": "en"}
 SHOT_W, SHOT_H = 540, 1145
 
-LOCALES = ["de", "en"]
+LOCALES = ["en", "de"]
 C = {code: importlib.import_module(f"content_{code}").C for code in LOCALES}
 LEGAL = {
     "de": {"privacy": "/datenschutz/", "imprint": "/impressum/"},
@@ -48,12 +48,21 @@ LEGAL = {
 e = html.escape
 
 
+# Englisch ist die Hauptsprache und liegt an der Wurzel (Entscheidung des Inhabers, 21.11.2026);
+# jede weitere Sprache bekommt ein eigenes Verzeichnis /<code>/.
+GUIDES_DIR = {"en": "guides", "de": "anleitungen"}
+
+# Adressen, die am 21.11.2026 kurz online waren (de an der Wurzel, en unter /en/). Sie leiten auf
+# die neuen Adressen weiter, falls Google oder jemand sie schon kennt.
+OLD = {"de": ("/", "/anleitungen/"), "en": ("/en/", "/en/guides/")}
+
+
 def home_path(code: str) -> str:
-    return "/" if code == "de" else f"/{code}/"
+    return "/" if code == "en" else f"/{code}/"
 
 
 def guides_path(code: str) -> str:
-    return "/anleitungen/" if code == "de" else f"/{code}/guides/"
+    return home_path(code) + GUIDES_DIR[code] + "/"
 
 
 def guide_path(code: str, g: dict) -> str:
@@ -415,6 +424,28 @@ def write(path: str, content: str) -> None:
     target.write_text(content, encoding="utf-8", newline="\n")
 
 
+def redirect_page(target: str) -> str:
+    url = href(target)
+    return (f'<!doctype html><html><head><meta charset="utf-8"><title>Stay Awake</title>'
+            f'<meta name="robots" content="noindex"><link rel="canonical" href="{abs_url(target)}">'
+            f'<meta http-equiv="refresh" content="0; url={url}"></head>'
+            f'<body><p><a href="{url}">{abs_url(target)}</a></p></body></html>\n')
+
+
+def write_redirects() -> int:
+    """Alte Adressen -> neue. Die Wurzel "/" ist jetzt die englische Startseite und bleibt."""
+    n = 0
+    for code, (old_home, old_guides) in OLD.items():
+        moves = [(old_home, home_path(code)), (old_guides, guides_path(code))]
+        moves += [(old_guides + g["slug"] + "/", guide_path(code, g)) for g in C[code]["guides"]]
+        for old, new in moves:
+            if old == new or old == "/":
+                continue
+            write(old, redirect_page(new))
+            n += 1
+    return n
+
+
 def main() -> None:
     global STAMP
     STAMP = hashlib.sha1((ROOT / "css/site.css").read_bytes()).hexdigest()[:8]
@@ -443,7 +474,7 @@ def main() -> None:
         "# Datenschutz, Impressum, Privacy und Imprint tragen weiter noindex (Name und Anschrift).\n"
         f"User-agent: *\nAllow: /\nDisallow: {BASE}/tools/\n\nSitemap: {abs_url('/sitemap.xml')}\n",
         encoding="utf-8", newline="\n")
-    print(f"{len(urls)} Seiten gebaut, Stempel {STAMP}")
+    print(f"{len(urls)} Seiten gebaut, {write_redirects()} Weiterleitungen, Stempel {STAMP}")
 
 
 if __name__ == "__main__":

@@ -396,7 +396,7 @@ C = {
                 ["Can the Android clock app repeat an alarm every 30 minutes?",
                  ["The clock apps on most Android phones repeat alarms by weekday only. For every 30 minutes you need several alarms, a timer or a separate app."]],
                 ["Why doesn’t my interval alarm ring when the screen is off?",
-                 ["Often battery optimisation or a missing permission for exact alarms is the cause. See [Android alarm not going off](/en/guides/android-alarm-not-going-off/)."]],
+                 ["Often battery optimisation or a missing permission for exact alarms is the cause. See [Android alarm not going off](/guides/android-alarm-not-going-off/)."]],
                 ["Can I set an interval of 15 or 45 minutes?",
                  ["In Stay Awake, yes: the dial goes from one minute to twelve hours."]],
             ],
