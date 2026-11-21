@@ -225,6 +225,48 @@ def escalation(code: str) -> str:
 
 # ---------------------------------------------------------------- Startseite
 
+LIVE = {
+    "en": ("SESSION RUNNING", "until next check", "Unlimited", "Every 30 minutes · Tap or shake", "I am awake", "End session"),
+    "de": ("SITZUNG LÄUFT", "bis zum nächsten Check", "Unbegrenzt", "Alle 30 Minuten · Tippen oder Schütteln", "Ich bin wach", "Sitzung beenden"),
+}
+
+
+def live_session(code: str) -> str:
+    """Der Sitzungsbildschirm der App, nachgebaut in HTML: Der Countdown laeuft wirklich herunter
+    und der Ring schrumpft mit (Werte und Farben wie ui/session/ActiveSessionScreen). Ohne
+    JavaScript bleibt er bei 29:50 stehen - genau wie das Bildschirmfoto."""
+    title, until, mode, every, awake, end = LIVE[code]
+    alt = C[code]["home"]["shots"][C[code]["home"]["hero_shot"]]
+    r = 44
+    circ = 2 * 3.14159265 * r
+    return f"""<figure class="phone live" role="img" aria-label="{e(alt)}">
+      <div class="live__screen" aria-hidden="true">
+        <span class="live__title">{e(title)}</span>
+        <svg class="live__ring" viewBox="0 0 100 100"><circle class="live__glow" cx="50" cy="50" r="{r}"/><circle class="live__track" cx="50" cy="50" r="{r}"/><circle class="live__arc" cx="50" cy="50" r="{r}" stroke-dasharray="{circ:.2f}" stroke-dashoffset="{circ * 10 / 1800:.2f}" data-circ="{circ:.2f}"/></svg>
+        <span class="live__time" data-left="1790">29:50</span>
+        <span class="live__until">{e(until)}</span>
+        <span class="live__mode">{e(mode)}</span>
+        <span class="live__every">{e(every)}</span>
+        <span class="live__btn">{e(awake)}</span>
+        <span class="live__end">{e(end)}</span>
+        <span class="live__bar"></span>
+      </div>
+    </figure>
+    <script>
+    (function () {{
+      var t = document.querySelector(".live__time"), arc = document.querySelector(".live__arc");
+      if (!t || !arc) return;
+      var full = 1800, left = +t.dataset.left, circ = +arc.dataset.circ;
+      function show() {{
+        var m = Math.floor(left / 60), s = left % 60;
+        t.textContent = m + ":" + (s < 10 ? "0" : "") + s;
+        arc.style.strokeDashoffset = (circ * (full - left) / full).toFixed(2);
+      }}
+      setInterval(function () {{ left = left > 0 ? left - 1 : full; show(); }}, 1000);
+    }})();
+    </script>"""
+
+
 def home(code: str) -> str:
     c = C[code]
     h = c["home"]
@@ -255,7 +297,7 @@ def home(code: str) -> str:
       <p class="who">{e(h['who'])}</p>
       {play_badge(code)}
     </div>
-    <div class="hero__shot"><div class="halo" aria-hidden="true"></div>{phone(h['hero_shot'], shots[h['hero_shot']], eager=True, w=290)}</div>
+    <div class="hero__shot"><div class="halo" aria-hidden="true"></div>{live_session(code)}</div>
   </div></section>
 
   <section class="why"><div class="wrap wide">

@@ -152,6 +152,38 @@ a:hover { color: var(--text); }
 
 /* ------------------------------------------------------------ Startseite */
 
+/* Der Sitzungsbildschirm als lebendes Element (Masse aus dem echten Bildschirmfoto, 540 x 1145).
+   Bleibt in beiden Website-Modi dunkel - so sieht die App nachts aus. */
+.live { width: min(290px, 78vw); }
+.live__screen {
+  container-type: inline-size; position: relative; aspect-ratio: 540 / 1145;
+  border-radius: 26px; border: 1px solid rgba(244, 183, 64, .35); box-shadow: var(--shadow); overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 36%, rgba(60, 50, 140, .55), transparent 42%),
+    linear-gradient(180deg, #1D2150 0, #1A1F4A 35%, #10142A 70%, #080B14 100%);
+  color: #E8ECF7; font-family: Roboto, system-ui, sans-serif; text-align: center;
+}
+.live__screen > span { position: absolute; left: 0; right: 0; transform: translateY(-50%); line-height: 1.2; }
+.live__title { top: 17.8%; font-size: 4.2cqw; letter-spacing: .18em; color: #93A0BE; font-weight: 500; }
+.live__ring { position: absolute; left: 18.5%; width: 63%; top: 36.2%; transform: translateY(-50%); overflow: visible; }
+.live__ring circle { fill: none; }
+.live__track { stroke: rgba(244, 183, 64, .12); stroke-width: 1.1; }
+.live__arc { stroke: #F4B740; stroke-width: 1.1; stroke-linecap: round; transform: rotate(-90deg); transform-origin: 50% 50%;
+  transition: stroke-dashoffset .9s linear; }
+.live__glow { stroke: rgba(244, 183, 64, .55); stroke-width: 3; filter: blur(2.2px); animation: breathe-ring 12s ease-in-out infinite; }
+@keyframes breathe-ring { 0%, 100% { opacity: .25; } 50% { opacity: .8; } }
+.live__time { top: 36.2%; font-size: 17.5cqw; font-weight: 300; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.live__until { top: 55.3%; font-size: 5.6cqw; color: #93A0BE; }
+.live__mode { top: 60.8%; font-size: 5.4cqw; font-weight: 600; }
+.live__every { top: 63.9%; font-size: 4.7cqw; color: #A3AECA; }
+.live__btn {
+  top: 85.8%; left: 6% !important; right: 6% !important; height: 13.6cqw; border-radius: 99px;
+  background: #4A3A12; color: #FFD68A; font-size: 5.6cqw; font-weight: 500; display: grid; place-items: center;
+}
+.live__end { top: 92.7%; font-size: 5.2cqw; color: #A3AECA; }
+.live__bar { top: 98.6%; left: 37% !important; right: 37% !important; height: .9cqw; border-radius: 9px; background: #E8ECF7; }
+@media (prefers-reduced-motion: reduce) { .live__glow { animation: none; opacity: .5; } .live__arc { transition: none; } }
+
 .hero { padding: 1.5rem 0 1rem; }
 .hero__grid { display: grid; gap: 2.5rem; align-items: center; }
 .hero__shot { position: relative; justify-self: center; }

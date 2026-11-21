@@ -24,7 +24,7 @@
 <meta property="og:locale" content="de_DE">
 <link rel="icon" href="/stay-awake/img/icon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="/stay-awake/img/icon-180.png">
-<link rel="stylesheet" href="/stay-awake/css/site.css?v=53d89a41">
+<link rel="stylesheet" href="/stay-awake/css/site.css?v=e58147ff">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MobileApplication", "name": "Stay Awake", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "description": "Ein Wecker klingelt einmal, du machst ihn aus und schläfst wieder ein. Stay Awake fragt immer wieder, ob du noch wach bist – und klingelt, bis du antwortest.", "url": "https://allradmuelleimer.github.io/stay-awake/de/", "image": "https://allradmuelleimer.github.io/stay-awake/img/icon-512.png", "inLanguage": "de", "screenshot": ["https://allradmuelleimer.github.io/stay-awake/img/de-session.webp", "https://allradmuelleimer.github.io/stay-awake/img/de-home.webp", "https://allradmuelleimer.github.io/stay-awake/img/de-check.webp", "https://allradmuelleimer.github.io/stay-awake/img/de-alarm.webp", "https://allradmuelleimer.github.io/stay-awake/img/de-schedules.webp", "https://allradmuelleimer.github.io/stay-awake/img/de-reliability.webp", "https://allradmuelleimer.github.io/stay-awake/img/de-timer.webp", "https://allradmuelleimer.github.io/stay-awake/img/de-settings.webp"], "installUrl": "https://play.google.com/store/apps/details?id=com.nicedevelopments.stayawake", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Nice Developments"}}, {"@type": "WebSite", "name": "Stay Awake", "url": "https://allradmuelleimer.github.io/stay-awake/de/", "inLanguage": "de"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was ist der Unterschied zu einem normalen Wecker?", "acceptedAnswer": {"@type": "Answer", "text": "Ein Wecker klingelt zu einer Uhrzeit, egal ob du wach bist. Stay Awake fragt erst und wird nur laut, wenn keine Antwort kommt. Die App ist zum Wachbleiben gemacht, nicht zum Aufwachen am Morgen."}}, {"@type": "Question", "name": "Muss der Bildschirm anbleiben?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Leg das Telefon hin, sperr es, lass den Bildschirm dunkel werden. Der Check erscheint über dem Sperrbildschirm. Hast du Schütteln gewählt, bestätigt ein Schütteln auch bei dunklem Bildschirm."}}, {"@type": "Question", "name": "Welcher Ton klingelt?", "acceptedAnswer": {"@type": "Answer", "text": "Voreingestellt der Weckton deines Telefons – der, auf den du ohnehin reagierst. In den Einstellungen kannst du die Stay-Awake-Melodie oder einen anderen Ton wählen."}}, {"@type": "Question", "name": "Funktioniert die App ohne Internet?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Checks, Vibration und Alarm laufen vollständig auf dem Telefon."}}, {"@type": "Question", "name": "Was kostet die App?", "acceptedAnswer": {"@type": "Answer", "text": "Alles, was dich wach hält, ist kostenlos. Die kostenlose Version zeigt einen kleinen Banner auf den normalen Bildschirmen, nie auf dem Check oder beim Alarm. Stay Awake Pro entfernt ihn, monatlich oder einmalig; den Preis zeigt Google Play."}}, {"@type": "Question", "name": "Gibt es Stay Awake fürs iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "Nein, Stay Awake gibt es nur für Android."}}]}</script>
 </head>
@@ -48,7 +48,32 @@
       <p class="who">Nachtschicht · Bereitschaft · Lernnächte · durch die Nacht warten</p>
       <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.nicedevelopments.stayawake&amp;hl=de">Bei Google Play laden</a><span class="cta__note">Kostenlos für Android · ohne Konto</span></p>
     </div>
-    <div class="hero__shot"><div class="halo" aria-hidden="true"></div><figure class="phone"><img src="/stay-awake/img/de-session.webp" width="290" height="614" alt="Laufende Sitzung: ein Amber-Ring um den Countdown 29:50, darunter „bis zum nächsten Check“, „Unbegrenzt“, „Alle 30 Minuten · Tippen oder Schütteln“, der Knopf „Ich bin wach“ und „Sitzung beenden“." decoding="async" fetchpriority="high"></figure></div>
+    <div class="hero__shot"><div class="halo" aria-hidden="true"></div><figure class="phone live" role="img" aria-label="Laufende Sitzung: ein Amber-Ring um den Countdown 29:50, darunter „bis zum nächsten Check“, „Unbegrenzt“, „Alle 30 Minuten · Tippen oder Schütteln“, der Knopf „Ich bin wach“ und „Sitzung beenden“.">
+      <div class="live__screen" aria-hidden="true">
+        <span class="live__title">SITZUNG LÄUFT</span>
+        <svg class="live__ring" viewBox="0 0 100 100"><circle class="live__glow" cx="50" cy="50" r="44"/><circle class="live__track" cx="50" cy="50" r="44"/><circle class="live__arc" cx="50" cy="50" r="44" stroke-dasharray="276.46" stroke-dashoffset="1.54" data-circ="276.46"/></svg>
+        <span class="live__time" data-left="1790">29:50</span>
+        <span class="live__until">bis zum nächsten Check</span>
+        <span class="live__mode">Unbegrenzt</span>
+        <span class="live__every">Alle 30 Minuten · Tippen oder Schütteln</span>
+        <span class="live__btn">Ich bin wach</span>
+        <span class="live__end">Sitzung beenden</span>
+        <span class="live__bar"></span>
+      </div>
+    </figure>
+    <script>
+    (function () {
+      var t = document.querySelector(".live__time"), arc = document.querySelector(".live__arc");
+      if (!t || !arc) return;
+      var full = 1800, left = +t.dataset.left, circ = +arc.dataset.circ;
+      function show() {
+        var m = Math.floor(left / 60), s = left % 60;
+        t.textContent = m + ":" + (s < 10 ? "0" : "") + s;
+        arc.style.strokeDashoffset = (circ * (full - left) / full).toFixed(2);
+      }
+      setInterval(function () { left = left > 0 ? left - 1 : full; show(); }, 1000);
+    })();
+    </script></div>
   </div></section>
 
   <section class="why"><div class="wrap wide">

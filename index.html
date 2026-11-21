@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_US">
 <link rel="icon" href="/stay-awake/img/icon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="/stay-awake/img/icon-180.png">
-<link rel="stylesheet" href="/stay-awake/css/site.css?v=53d89a41">
+<link rel="stylesheet" href="/stay-awake/css/site.css?v=e58147ff">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MobileApplication", "name": "Stay Awake", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "description": "A normal alarm rings once, you switch it off and fall asleep again. Stay Awake keeps asking whether you’re still awake – and rings until you answer.", "url": "https://allradmuelleimer.github.io/stay-awake/", "image": "https://allradmuelleimer.github.io/stay-awake/img/icon-512.png", "inLanguage": "en", "screenshot": ["https://allradmuelleimer.github.io/stay-awake/img/en-session.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-home.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-check.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-alarm.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-schedules.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-reliability.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-timer.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-settings.webp"], "installUrl": "https://play.google.com/store/apps/details?id=com.nicedevelopments.stayawake", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Nice Developments"}}, {"@type": "WebSite", "name": "Stay Awake", "url": "https://allradmuelleimer.github.io/stay-awake/", "inLanguage": "en"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is this different from a normal alarm clock?", "acceptedAnswer": {"@type": "Answer", "text": "An alarm clock rings at a time, whether you are awake or not. Stay Awake asks first and only gets loud if you do not answer. It is built for staying awake, not for waking up in the morning."}}, {"@type": "Question", "name": "Do I have to keep the screen on?", "acceptedAnswer": {"@type": "Answer", "text": "No. Put the phone down, lock it, let the screen go dark. The check appears over the lock screen. If you chose shaking, a shake confirms even with the screen off."}}, {"@type": "Question", "name": "Which alarm sound does it use?", "acceptedAnswer": {"@type": "Answer", "text": "By default your phone’s own alarm sound – the one you are used to waking up to. In Settings you can switch to the Stay Awake melody or pick another sound."}}, {"@type": "Question", "name": "Does it work without internet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Checks, vibration and the alarm run entirely on the phone."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Everything that keeps you awake is free. The free version shows a small banner on normal screens, never on the check or the alarm. Stay Awake Pro removes it, monthly or once; the price is shown in Google Play."}}, {"@type": "Question", "name": "Is there an iPhone version?", "acceptedAnswer": {"@type": "Answer", "text": "No, Stay Awake is only available for Android."}}]}</script>
 </head>
@@ -48,7 +48,32 @@
       <p class="who">Night shifts · standby · study nights · waiting through the night</p>
       <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.nicedevelopments.stayawake&amp;hl=en">Get it on Google Play</a><span class="cta__note">Free for Android · no account</span></p>
     </div>
-    <div class="hero__shot"><div class="halo" aria-hidden="true"></div><figure class="phone"><img src="/stay-awake/img/en-session.webp" width="290" height="614" alt="Running session: an amber ring around the countdown 29:50, below it “until next check”, “Unlimited”, “Every 30 minutes · Tap or shake”, the button “I am awake” and “End session”." decoding="async" fetchpriority="high"></figure></div>
+    <div class="hero__shot"><div class="halo" aria-hidden="true"></div><figure class="phone live" role="img" aria-label="Running session: an amber ring around the countdown 29:50, below it “until next check”, “Unlimited”, “Every 30 minutes · Tap or shake”, the button “I am awake” and “End session”.">
+      <div class="live__screen" aria-hidden="true">
+        <span class="live__title">SESSION RUNNING</span>
+        <svg class="live__ring" viewBox="0 0 100 100"><circle class="live__glow" cx="50" cy="50" r="44"/><circle class="live__track" cx="50" cy="50" r="44"/><circle class="live__arc" cx="50" cy="50" r="44" stroke-dasharray="276.46" stroke-dashoffset="1.54" data-circ="276.46"/></svg>
+        <span class="live__time" data-left="1790">29:50</span>
+        <span class="live__until">until next check</span>
+        <span class="live__mode">Unlimited</span>
+        <span class="live__every">Every 30 minutes · Tap or shake</span>
+        <span class="live__btn">I am awake</span>
+        <span class="live__end">End session</span>
+        <span class="live__bar"></span>
+      </div>
+    </figure>
+    <script>
+    (function () {
+      var t = document.querySelector(".live__time"), arc = document.querySelector(".live__arc");
+      if (!t || !arc) return;
+      var full = 1800, left = +t.dataset.left, circ = +arc.dataset.circ;
+      function show() {
+        var m = Math.floor(left / 60), s = left % 60;
+        t.textContent = m + ":" + (s < 10 ? "0" : "") + s;
+        arc.style.strokeDashoffset = (circ * (full - left) / full).toFixed(2);
+      }
+      setInterval(function () { left = left > 0 ? left - 1 : full; show(); }, 1000);
+    })();
+    </script></div>
   </div></section>
 
   <section class="why"><div class="wrap wide">
