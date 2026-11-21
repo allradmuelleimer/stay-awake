@@ -40,11 +40,15 @@ C = {
 
     # ------------------------------------------------------------ Startseite
     "home": {
-        "title": "Stay Awake – der Wecker, der fragt, ob du noch wach bist (Android)",
-        "desc": "Stay Awake fragt in deinem Takt, ob du noch wach bist. Bestätigen, und der Timer beginnt neu. Keine Antwort: Vibration nach 10 Sekunden, Alarm nach 20.",
-        "kicker": "Wach-Check-Timer für Android",
-        "h1": "Nicht „weck mich“. Halt mich wach.",
-        "lead": "Stay Awake fragt in festen Abständen: **Bist du noch wach?** Tipp auf Ja – oder schüttel einfach das Handy – und der Timer beginnt von vorn. Kommt keine Antwort, vibriert das Telefon nach 10 Sekunden, nach 20 ertönt ein echter Alarm.",
+        "title": "Stay Awake – der Wecker, der immer wieder fragt, ob du noch wach bist",
+        "desc": "Ein Wecker klingelt einmal, du machst ihn aus und schläfst wieder ein. Stay Awake fragt immer wieder, ob du noch wach bist – und klingelt, bis du antwortest.",
+        "kicker": "Für alle, die wach bleiben müssen",
+        "h1": "Ein Wecker klingelt einmal. Stay Awake fragt immer wieder.",
+        "lead": "Kennst du das: Der Wecker klingelt, du machst ihn aus – und fünf Minuten später schläfst du wieder. Stay Awake hört nach einem Klingeln nicht auf. Alle 30 Minuten, oder in deinem Takt, fragt die App: **Bist du noch wach?** Einmal schütteln oder tippen, und die nächste Runde beginnt. Keine Antwort? Nach 10 Sekunden vibriert das Telefon, nach 20 klingelt ein Alarm – so lange, bis du antwortest.",
+        "who": "Nachtschicht · Bereitschaft · Lernnächte · durch die Nacht warten",
+        "why_h2": "Warum ein normaler Wecker nicht reicht",
+        "why_lead": "Ein Wecker ist dafür gebaut, dich einmal zu wecken. Wach bleiben heißt aber, Stunde um Stunde durchzuhalten – und schwierig ist genau der Moment, in dem niemand nachfragt.",
+        "why": [["Normaler Wecker", ["Klingelt einmal – zu einer Uhrzeit, die du vorher festlegst.", "Im Halbschlaf ausgemacht, und danach kommt nichts mehr.", "Fragt nie, ob du noch wach bist."]], ["Stay Awake", ["Fragt immer wieder, die ganze Nacht – in deinem Takt, von einer Minute bis zwölf Stunden.", "Fragt erst leise. Nur ohne Antwort vibriert es, dann klingelt es.", "Der Alarm klingelt, bis du antwortest. Dann beginnt die nächste Runde."]]],
         "hero_shot": "de-session.webp",
         "shots": {
             "de-session.webp": "Laufende Sitzung: ein Amber-Ring um den Countdown 29:50, darunter „bis zum nächsten Check“, „Unbegrenzt“, „Alle 30 Minuten · Tippen oder Schütteln“, der Knopf „Ich bin wach“ und „Sitzung beenden“.",
@@ -110,8 +114,8 @@ C = {
             ["Gibt es Stay Awake fürs iPhone?",
              ["Nein, Stay Awake gibt es nur für Android."]],
         ],
-        "final_h2": "Sitzung starten. Handy weglegen.",
-        "final_body": "Stay Awake meldet sich, wenn das Intervall um ist – und wird nur laut, wenn du nicht antwortest.",
+        "final_h2": "Wenn du wach bleiben musst, ist das deine App.",
+        "final_body": "Sitzung starten, Handy weglegen. Stay Awake fragt weiter, bis du die Sitzung beendest.",
     },
 
     "guides_index": {

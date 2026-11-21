@@ -40,11 +40,15 @@ C = {
 
     # ------------------------------------------------------------ Home
     "home": {
-        "title": "Stay Awake – an alarm that checks if you are still awake (Android)",
-        "desc": "Stay Awake asks at a set interval whether you are still awake. Confirm and the timer starts over. Miss it: vibration after 10 seconds, alarm after 20.",
-        "kicker": "Wake check timer for Android",
-        "h1": "Not “wake me up”. Keep me awake.",
-        "lead": "Stay Awake asks you at a set interval: **Are you still awake?** Tap Yes – or just shake the phone – and the timer starts over. If no answer comes, the phone vibrates after 10 seconds and a real alarm sounds after 20.",
+        "title": "Stay Awake – the alarm that keeps asking if you’re still awake",
+        "desc": "A normal alarm rings once, you switch it off and fall asleep again. Stay Awake keeps asking whether you’re still awake – and rings until you answer.",
+        "kicker": "For everyone who has to stay awake",
+        "h1": "An alarm rings once. Stay Awake keeps asking.",
+        "lead": "You know it: the alarm goes off, you switch it off – and five minutes later you’re asleep again. Stay Awake doesn’t stop after one ring. Every 30 minutes, or at whatever interval you set, it asks: **Are you still awake?** One shake or one tap and the next round begins. No answer? It vibrates after 10 seconds, and after 20 an alarm rings – until you answer.",
+        "who": "Night shifts · standby · study nights · waiting through the night",
+        "why_h2": "Why a normal alarm isn’t enough",
+        "why_lead": "An alarm is built to wake you up once. Staying awake means getting through hour after hour – and the hard part is the moment nobody checks on you.",
+        "why": [["A normal alarm", ["Rings once – at a time you set in advance.", "Switched off half asleep, and nothing comes after it.", "Never asks whether you’re still awake."]], ["Stay Awake", ["Asks again and again, all night – at your interval, from one minute to twelve hours.", "Asks quietly first. Only if you don’t answer does it vibrate, then ring.", "The alarm rings until you answer. Then the next round starts."]]],
         "hero_shot": "en-session.webp",
         "shots": {
             "en-session.webp": "Running session: an amber ring around the countdown 29:50, below it “until next check”, “Unlimited”, “Every 30 minutes · Tap or shake”, the button “I am awake” and “End session”.",
@@ -110,8 +114,8 @@ C = {
             ["Is there an iPhone version?",
              ["No, Stay Awake is only available for Android."]],
         ],
-        "final_h2": "Start a session. Put the phone down.",
-        "final_body": "Stay Awake checks in when the interval is up – and only gets loud if you do not answer.",
+        "final_h2": "If you have to stay awake, this is your app.",
+        "final_body": "Start a session, put the phone down. Stay Awake keeps asking until you end the session.",
     },
 
     "guides_index": {

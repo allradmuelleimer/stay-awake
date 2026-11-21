@@ -3,27 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stay Awake – an alarm that checks if you are still awake (Android)</title>
-<meta name="description" content="Stay Awake asks at a set interval whether you are still awake. Confirm and the timer starts over. Miss it: vibration after 10 seconds, alarm after 20.">
+<title>Stay Awake – the alarm that keeps asking if you’re still awake</title>
+<meta name="description" content="A normal alarm rings once, you switch it off and fall asleep again. Stay Awake keeps asking whether you’re still awake – and rings until you answer.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://allradmuelleimer.github.io/stay-awake/">
 <link rel="alternate" hreflang="en" href="https://allradmuelleimer.github.io/stay-awake/">
 <link rel="alternate" hreflang="de" href="https://allradmuelleimer.github.io/stay-awake/de/">
 <link rel="alternate" hreflang="x-default" href="https://allradmuelleimer.github.io/stay-awake/">
 <meta name="color-scheme" content="dark light">
+<!-- Hintergrund sofort setzen, sonst blitzt beim Seitenwechsel kurz Weiss auf -->
+<style>html{background:#080B14;color:#E8ECF7}@media (prefers-color-scheme:light){html{background:#F3F4FA;color:#12162A}}</style>
 <meta name="theme-color" content="#E7E9F5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141B33" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Stay Awake">
-<meta property="og:title" content="Stay Awake – an alarm that checks if you are still awake (Android)">
-<meta property="og:description" content="Stay Awake asks at a set interval whether you are still awake. Confirm and the timer starts over. Miss it: vibration after 10 seconds, alarm after 20.">
+<meta property="og:title" content="Stay Awake – the alarm that keeps asking if you’re still awake">
+<meta property="og:description" content="A normal alarm rings once, you switch it off and fall asleep again. Stay Awake keeps asking whether you’re still awake – and rings until you answer.">
 <meta property="og:url" content="https://allradmuelleimer.github.io/stay-awake/">
 <meta property="og:image" content="https://allradmuelleimer.github.io/stay-awake/img/icon-512.png">
 <meta property="og:locale" content="en_US">
 <link rel="icon" href="/stay-awake/img/icon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="/stay-awake/img/icon-180.png">
-<link rel="stylesheet" href="/stay-awake/css/site.css?v=3e68066a">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MobileApplication", "name": "Stay Awake", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "description": "Stay Awake asks at a set interval whether you are still awake. Confirm and the timer starts over. Miss it: vibration after 10 seconds, alarm after 20.", "url": "https://allradmuelleimer.github.io/stay-awake/", "image": "https://allradmuelleimer.github.io/stay-awake/img/icon-512.png", "inLanguage": "en", "screenshot": ["https://allradmuelleimer.github.io/stay-awake/img/en-session.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-home.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-check.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-alarm.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-schedules.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-reliability.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-timer.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-settings.webp"], "installUrl": "https://play.google.com/store/apps/details?id=com.nicedevelopments.stayawake", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Nice Developments"}}, {"@type": "WebSite", "name": "Stay Awake", "url": "https://allradmuelleimer.github.io/stay-awake/", "inLanguage": "en"}]}</script>
+<link rel="stylesheet" href="/stay-awake/css/site.css?v=53d89a41">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MobileApplication", "name": "Stay Awake", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "description": "A normal alarm rings once, you switch it off and fall asleep again. Stay Awake keeps asking whether you’re still awake – and rings until you answer.", "url": "https://allradmuelleimer.github.io/stay-awake/", "image": "https://allradmuelleimer.github.io/stay-awake/img/icon-512.png", "inLanguage": "en", "screenshot": ["https://allradmuelleimer.github.io/stay-awake/img/en-session.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-home.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-check.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-alarm.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-schedules.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-reliability.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-timer.webp", "https://allradmuelleimer.github.io/stay-awake/img/en-settings.webp"], "installUrl": "https://play.google.com/store/apps/details?id=com.nicedevelopments.stayawake", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Nice Developments"}}, {"@type": "WebSite", "name": "Stay Awake", "url": "https://allradmuelleimer.github.io/stay-awake/", "inLanguage": "en"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is this different from a normal alarm clock?", "acceptedAnswer": {"@type": "Answer", "text": "An alarm clock rings at a time, whether you are awake or not. Stay Awake asks first and only gets loud if you do not answer. It is built for staying awake, not for waking up in the morning."}}, {"@type": "Question", "name": "Do I have to keep the screen on?", "acceptedAnswer": {"@type": "Answer", "text": "No. Put the phone down, lock it, let the screen go dark. The check appears over the lock screen. If you chose shaking, a shake confirms even with the screen off."}}, {"@type": "Question", "name": "Which alarm sound does it use?", "acceptedAnswer": {"@type": "Answer", "text": "By default your phone’s own alarm sound – the one you are used to waking up to. In Settings you can switch to the Stay Awake melody or pick another sound."}}, {"@type": "Question", "name": "Does it work without internet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Checks, vibration and the alarm run entirely on the phone."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Everything that keeps you awake is free. The free version shows a small banner on normal screens, never on the check or the alarm. Stay Awake Pro removes it, monthly or once; the price is shown in Google Play."}}, {"@type": "Question", "name": "Is there an iPhone version?", "acceptedAnswer": {"@type": "Answer", "text": "No, Stay Awake is only available for Android."}}]}</script>
 </head>
 <body>
@@ -40,12 +42,19 @@
 <main id="main">
   <section class="hero"><div class="wrap wide hero__grid">
     <div class="hero__text">
-      <p class="kicker">Wake check timer for Android</p>
-      <h1>Not “wake me up”. Keep me awake.</h1>
-      <p class="lead">Stay Awake asks you at a set interval: <strong>Are you still awake?</strong> Tap Yes – or just shake the phone – and the timer starts over. If no answer comes, the phone vibrates after 10 seconds and a real alarm sounds after 20.</p>
+      <p class="kicker">For everyone who has to stay awake</p>
+      <h1>An alarm rings once. Stay Awake keeps asking.</h1>
+      <p class="lead">You know it: the alarm goes off, you switch it off – and five minutes later you’re asleep again. Stay Awake doesn’t stop after one ring. Every 30 minutes, or at whatever interval you set, it asks: <strong>Are you still awake?</strong> One shake or one tap and the next round begins. No answer? It vibrates after 10 seconds, and after 20 an alarm rings – until you answer.</p>
+      <p class="who">Night shifts · standby · study nights · waiting through the night</p>
       <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.nicedevelopments.stayawake&amp;hl=en">Get it on Google Play</a><span class="cta__note">Free for Android · no account</span></p>
     </div>
     <div class="hero__shot"><div class="halo" aria-hidden="true"></div><figure class="phone"><img src="/stay-awake/img/en-session.webp" width="290" height="614" alt="Running session: an amber ring around the countdown 29:50, below it “until next check”, “Unlimited”, “Every 30 minutes · Tap or shake”, the button “I am awake” and “End session”." decoding="async" fetchpriority="high"></figure></div>
+  </div></section>
+
+  <section class="why"><div class="wrap wide">
+    <h2>Why a normal alarm isn’t enough</h2>
+    <p class="lead">An alarm is built to wake you up once. Staying awake means getting through hour after hour – and the hard part is the moment nobody checks on you.</p>
+    <div class="why__grid"><div class="why__col why__col--0"><h3>A normal alarm</h3><ul><li>Rings once – at a time you set in advance.</li><li>Switched off half asleep, and nothing comes after it.</li><li>Never asks whether you’re still awake.</li></ul></div><div class="why__col why__col--1"><h3>Stay Awake</h3><ul><li>Asks again and again, all night – at your interval, from one minute to twelve hours.</li><li>Asks quietly first. Only if you don’t answer does it vibrate, then ring.</li><li>The alarm rings until you answer. Then the next round starts.</li></ul></div></div>
   </div></section>
 
   <section class="steps-band"><div class="wrap wide">
@@ -87,8 +96,8 @@
   </div></section>
 
   <section class="final"><div class="wrap">
-    <h2>Start a session. Put the phone down.</h2>
-    <p class="lead">Stay Awake checks in when the interval is up – and only gets loud if you do not answer.</p>
+    <h2>If you have to stay awake, this is your app.</h2>
+    <p class="lead">Start a session, put the phone down. Stay Awake keeps asking until you end the session.</p>
     <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.nicedevelopments.stayawake&amp;hl=en">Get it on Google Play</a><span class="cta__note">Free for Android · no account</span></p>
   </div></section>
 </main>

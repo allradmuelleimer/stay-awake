@@ -115,6 +115,8 @@ def head(code: str, path: str, title: str, desc: str, alts: dict[str, str], extr
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{canon}">
 {links}<meta name="color-scheme" content="dark light">
+<!-- Hintergrund sofort setzen, sonst blitzt beim Seitenwechsel kurz Weiss auf -->
+<style>html{{background:#080B14;color:#E8ECF7}}@media (prefers-color-scheme:light){{html{{background:#F3F4FA;color:#12162A}}}}</style>
 <meta name="theme-color" content="#E7E9F5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141B33" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="{og_type}">
@@ -234,6 +236,10 @@ def home(code: str) -> str:
       <div class="feature__text"><p class="kicker">{e(f['kicker'])}</p><h3>{e(f['h2'])}</h3>{''.join(f'<p>{inline(p)}</p>' for p in f['body'])}</div></li>"""
         for f in h["features"])
     nots = "".join(f"<li>{inline(x)}</li>" for x in h["nots"])
+    why_cols = "".join(
+        f'<div class="why__col why__col--{i}"><h3>{e(t)}</h3><ul>'
+        + "".join(f"<li>{inline(x)}</li>" for x in items) + "</ul></div>"
+        for i, (t, items) in enumerate(h["why"]))
     guide_cards = "".join(
         f'<li><a href="{href(guide_path(code, g))}"><b>{e(g["h1"])}</b><em>{e(g["teaser"])}</em></a></li>'
         for g in c["guides"])
@@ -246,9 +252,16 @@ def home(code: str) -> str:
       <p class="kicker">{e(h['kicker'])}</p>
       <h1>{e(h['h1'])}</h1>
       <p class="lead">{inline(h['lead'])}</p>
+      <p class="who">{e(h['who'])}</p>
       {play_badge(code)}
     </div>
     <div class="hero__shot"><div class="halo" aria-hidden="true"></div>{phone(h['hero_shot'], shots[h['hero_shot']], eager=True, w=290)}</div>
+  </div></section>
+
+  <section class="why"><div class="wrap wide">
+    <h2>{e(h['why_h2'])}</h2>
+    <p class="lead">{e(h['why_lead'])}</p>
+    <div class="why__grid">{why_cols}</div>
   </div></section>
 
   <section class="steps-band"><div class="wrap wide">
@@ -427,6 +440,7 @@ def write(path: str, content: str) -> None:
 def redirect_page(target: str) -> str:
     url = href(target)
     return (f'<!doctype html><html><head><meta charset="utf-8"><title>Stay Awake</title>'
+            f'<meta name="color-scheme" content="dark light"><style>html{{background:#080B14;color:#E8ECF7}}@media (prefers-color-scheme:light){{html{{background:#F3F4FA;color:#12162A}}}}</style>'
             f'<meta name="robots" content="noindex"><link rel="canonical" href="{abs_url(target)}">'
             f'<meta http-equiv="refresh" content="0; url={url}"></head>'
             f'<body><p><a href="{url}">{abs_url(target)}</a></p></body></html>\n')

@@ -167,6 +167,26 @@ a:hover { color: var(--text); }
 @keyframes breathe { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .halo { animation: none; opacity: .75; } }
 
+.who { color: var(--text-3); font-size: .95rem; letter-spacing: .02em; margin: -.25rem 0 0; }
+
+/* Normaler Wecker gegen Stay Awake: links gedaempft mit Strich, rechts Amber-Rand mit Haken. */
+.why { padding: 1.5rem 0 1rem; }
+.why__grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
+.why__col { border-radius: var(--radius); padding: 1.3rem 1.4rem .6rem; border: 1px solid var(--outline); }
+.why__col h3 { margin: 0 0 .8rem; font-size: 1.15rem; }
+.why__col ul { list-style: none; padding: 0; margin: 0; }
+.why__col li { position: relative; padding-left: 1.7rem; margin-bottom: .75rem; }
+.why__col--0 h3, .why__col--0 li { color: var(--text-3); }
+.why__col--0 li::before { content: ""; position: absolute; left: .1rem; top: .8em; width: .85rem; height: 2px; background: var(--text-3); }
+.why__col--1 { background: var(--surface); border-color: rgba(244, 183, 64, .55); box-shadow: 0 0 40px rgba(244, 183, 64, .10); }
+.why__col--1 h3 { color: var(--accent-ink); }
+.why__col--1 li { color: var(--text); }
+.why__col--1 li::before {
+  content: ""; position: absolute; left: 0; top: .45em; width: .95rem; height: .55rem;
+  border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg);
+}
+@media (min-width: 44rem) { .why__grid { grid-template-columns: 1fr 1fr; } }
+
 .steps-band { padding: 1rem 0 1.5rem; }
 .esc {
   list-style: none; padding: 0; margin: 2rem 0 0;
@@ -324,3 +344,7 @@ address { font-style: normal; color: var(--text-2); }
   .lead { font-size: 1.07rem; }
   .esc__t { font-size: 2.2rem; }
 }
+
+/* Seitenwechsel innerhalb der Website weich ueberblenden statt hart umschalten (Chrome/Edge). */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
