@@ -1,7 +1,3 @@
-# Startseiten und Anleitungen sind indexierbar und stehen in der Sitemap.
-# Datenschutz, Impressum, Privacy und Imprint tragen weiter noindex (Name und Anschrift).
+# Umgezogen nach https://nicedevelopments.github.io/stay-awake/ – die Seiten hier leiten nur noch weiter.
 User-agent: *
 Allow: /
-Disallow: /stay-awake/tools/
-
-Sitemap: https://allradmuelleimer.github.io/stay-awake/sitemap.xml
